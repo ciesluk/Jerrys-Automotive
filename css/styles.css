@@ -1,0 +1,125 @@
+*{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: aliceblue;
+    border: 3px solid black;
+    margin: 0 auto;
+    width: 960px;
+}
+
+.jerrysAuto{
+    background-color: aliceblue;
+    border: 3px solid black;
+    margin: 0 auto;
+    width: 2000px;
+}
+
+/*--------Header styles---------*/
+
+header{
+    background-color: #4f6d7a;
+    border-bottom: 2px solid black;
+    padding: 2em;
+}
+
+header h2{
+    color: white;
+}
+
+/*--------Main styles---------*/
+
+main{
+    background-color: #e8dab2;
+    padding: 1em;
+}
+
+#formQuestion{
+    text-align: center;
+}
+
+#informationTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#productTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+main h2{
+    text-align: center;
+}
+
+label{
+    width: 170px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+select{
+    width: 155px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+form{
+    margin: 0 auto;
+    width: 350px;
+}
+
+#errors{
+    color: red;
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    width: 95%;
+    font-size: 20px;
+    background-color: #dd6e42;
+    border: 2px solid black;
+    padding: 5px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+}
+
+/*process page CSS styles*/
+
+.resultForm{
+    width: 500px;
+    margin: 0 auto;
+}
+
+/*--------Footer styles---------*/
+
+footer{
+    background-color: #4f6d7a;
+    border-top: 2px solid black;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Table Styles*/
+
+table{
+    border: 3px solid black;
+    border-collapse: collapse;
+    margin: 20px auto;
+    color: black;
+}
+
+td, th{
+    border: 2px solid black;
+    padding: 2px 3px;
+}
+
+th{
+    font-weight: bold;
+}
