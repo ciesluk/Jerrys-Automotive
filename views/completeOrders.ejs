@@ -1,0 +1,76 @@
+<!--completeOrders.ejs
+
+    Revision History
+        Tom Cieslukowski, 2021.08.04: Created-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry's Auto Parts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body class="jerrysAuto">
+    <header>
+        <h1>Jerry's Auto Parts</h1>
+        <h2>Get your car running for the day!</h2>
+    </header>
+    <main>
+        <h2>All Orders for Jerry's Automotive</h2>
+        <!--Table to display what we retrieve from the MongoDB-->
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Customer Address</th>
+                    <th>Customer City</th>
+                    <th>Customer Postal</th>
+                    <th>Customer Province</th>
+                    <th>Customer Phone</th>
+                    <th>Customer Email</th>
+                    <th>Selected Shipping Days</th>
+                    <th>Tire Quantity</th>
+                    <th>Muffler Quantity</th>
+                    <th>Tire Cost</th>
+                    <th>Muffler Cost</th>
+                    <th>Subtotal</th>
+                    <th>Tax</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <!--Loop through all orders in database and display them in rows-->
+            <tbody>
+                <%
+                    for(var order of orders){
+                        %>
+                            <tr>
+                                <td><%= order.customerName%></td>
+                                <td><%= order.customerAddress%></td>
+                                <td><%= order.customerCity%></td>
+                                <td><%= order.customerPostal%></td>
+                                <td><%= order.customerProvince%></td>
+                                <td><%= order.customerPhone%></td>
+                                <td><%= order.customerEmail%></td>
+                                <td><%= order.shipDays%></td>
+                                <td><%= order.tireItem%></td>
+                                <td><%= order.mufflerItem%></td>
+                                <td><%= order.tireCost%></td>
+                                <td><%= order.mufflerCost%></td>
+                                <td><%= order.subTotal.toFixed(2) %></td>
+                                <td><%= order.tax.toFixed(2) %></td>
+                                <td><%= order.total.toFixed(2) %></td>
+                            </tr>
+                        <%
+                    }
+                %>   
+            </tbody>
+        </table>
+        
+    </main>
+    <footer><p>Tom Cieslukowski - Conestoga College 2021</p></footer>
+</body>
+</html>

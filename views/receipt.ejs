@@ -1,0 +1,60 @@
+<!--receipt.ejs
+
+    Revision History
+        Tom Cieslukowski, 2021.08.04: Created-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry's Auto Parts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Jerry's Auto Parts</h1>
+        <h2>Get your car running for the day!</h2>
+    </header>
+    <main>
+        <div class="resultForm">
+            <h2>Shop Invoice</h2>
+            <!--Customer Information-->
+            <p>Name: <%= customerName %> </p>
+            <p>Email: <%= customerEmail%> </p>
+            <p>Phone: <%= customerPhone%> </p><br>
+            <p>Delivery Address:<br> <%= customerAddress %>, <%= customerCity %>,<br> <%= customerProvince %>, <%= customerPostal %> </p><br>
+
+            <%if (shipDays == 1) { %>
+                <p>Shipping Charges: $10 </p><br>
+            <% } %>
+            <%if (shipDays == 2) { %>
+                <p>Shipping Charges: $20 </p><br>
+            <% } %>
+            <%if (shipDays == 3) { %>
+                <p>Shipping Charges: $30 </p><br>
+            <% } %>
+            
+            <!--Presenting items only if the customer has bought them -->
+            <%if (tireItem > 0) { %>
+                <p><%= tireItem %> Tire @ $20.00  Cost: $<%=tireCost%> </p>
+            <% } %>
+            <%if (mufflerItem > 0) { %>
+                <p><%= mufflerItem %> Muffler @ $68.00  Cost: $<%= mufflerCost%> </p>            
+            <% } %>
+            
+            <!--Subtotal-->
+            <p>Subtotal: $<%= subTotal.toFixed(2) %> </p>
+            <!--Tax-->
+            <p>Tax @13%: $<%= tax.toFixed(2) %> </p><br>
+            <!--Total-->
+            <p>Total: $<%= total.toFixed(2)  %> </p>
+        </div>
+    </main>
+    <footer><p>Tom Cieslukowski - Conestoga College 2021</p></footer>
+</body>
+</html>
